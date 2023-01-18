@@ -1,0 +1,12 @@
+1/9/23 
+
+We are creating a website
+
+credentials -username and password  -> sent to database
+
+database sends back a token based off the credentials
+
+web broswers do the same thing as curl
+- html, java, css
+
+json - java script _ _    (can use it as a what I learned)

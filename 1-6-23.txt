@@ -1,0 +1,23 @@
+1/6/23 - 
+
+Git
+*We use to code throughout the semester, and Git is used to create... ( I don't remember)
+
+-store information easily
+-we sumbit our homework through it
+-way to get information out
+
+
+public and private keys
+- long stream of random characters
+
+public key
+- on the internet anywhere
+- used to encrypt data, but not to decrypt wihtout private key
+
+private key
+- used to unlock
+- secret
+
+
+VScode
