@@ -1,0 +1,22 @@
+1/18/2023 - Systems Security
+
+
+End goal is to write our own API
+Token - allows you to be authenticated
+node.js - allows you to run java outside of a web
+
+app.get  it's get request, so asking for something not sending
+post - uploading data (node.js needs more data to firgure out)
+body-parser (middleware) - stops request and examines it
+
+
+
+app.use(bodyParser.json{}) ;         This looks for incoming data
+
+
+
+app.post('/login', (req, res) =>{                                       //Allows us to send data        /login tells you what page it is
+    const loginUser = req.body.userName;                                //
+    CSSConditionRule.log('Login username:' +loginUser);                 //what we are requesting - it is logged
+    res.send('Hello'+loginUser);                                        //
+});
