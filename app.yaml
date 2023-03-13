@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cit270alisonservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cit270alisonservice
+  template:
+    metadata:
+      name: cit270alisonservice
+      labels:
+          app: cit270alisonservice
+    spec:
+      containers:
+      - name: cit270alisonservice
+        image: gcr.io/mythic-producer-379820/alison-api
+        volumeMounts:
+        - name: ssl
+          mountPath: "/etc/letsencrypt/live/for17015@alisonforsberg.cit270.com/"
+        command: ["npm"]
+        args: ["run", "start"]
+        resources:
+          requests:
+            cpu: 0.125
+            memory: 500Mi
+          limits:
+            cpu: 0.125
+            memory: 600Mi
+        imagePullPolicy: Always
+      volumes:
+      - name: ssl
+        secret:
+          secretName: alisoncerts
