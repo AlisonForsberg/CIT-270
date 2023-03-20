@@ -6,7 +6,7 @@ const port = 443;
 
 const bodyParser = require('body-parser');
 
-const Redis = require('redis');
+const redis = require('redis');
 
 const redisClient = Redis.createClient({url:"redis://default:XjWqY5ee4adnnh6D@redis-stedi-alison:6379"});
 
