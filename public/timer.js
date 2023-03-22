@@ -19,8 +19,7 @@
         counterbutton = document.getElementById('counterbutton');
         let hash= location.hash;//will include the #
         let hashparts = hash.split("#");
-        const cookies = document.cookie;
-       
+        const cookieValue = document.cookie
         split('; ')
         .find((row) => row.startsWith('stedicookie='))
         ?.split('=')[1];

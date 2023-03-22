@@ -6,7 +6,7 @@ const port = 443;
 
 const bodyParser = require('body-parser');
 
-const redis = require('redis');
+const Redis = require('redis');
 
 const redisClient = Redis.createClient({url:"redis://default:XjWqY5ee4adnnh6D@redis-stedi-alison:6379"});
 
@@ -76,7 +76,7 @@ app.post('/login', async(req, res) =>{                                       //A
 
 https.createServer(
     {key: fs.readFileSync('/etc/letsencrypt/live/for17015@alisonforsberg.cit270.com/privkey.pem'),
-    cert: fs.readFileSync('/etc/letsencrypt/live/for17015@alisonforsberg.cit270.com/pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/for17015@alisonforsberg.cit270.com/cert.pem'),
     ca:fs.readFileSync('/etc/letsencrypt/live/for17015@alisonforsberg.cit270.com/fullchain.pem')
 },
 app
