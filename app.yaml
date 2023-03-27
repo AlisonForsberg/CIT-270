@@ -34,14 +34,15 @@ spec:
         secret:
           secretName: alisoncerts
 ---
-apiVersion: v1
-kind: Service
-metadata:
-  name: cit270alisonservice-loadbalancer
-spec:
-  selector:
-    app: cit270alisonservice
-  type: LoadBalancer
-  ports:
-  - port: 443
-    targetPort: 443
+# apiVersion: v1
+# kind: Service
+# metadata:
+#  name: cit270alisonservice-loadbalancer
+# spec:
+# selector:
+#     app: cit270alisonservice
+#   type: LoadBalancer
+#  ports:
+#   - port: 443
+#     targetPort: 443
+#commented out 3/27 to get rid of loadbalancer

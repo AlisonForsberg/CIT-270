@@ -68,19 +68,20 @@ app.post('/login', async(req, res) =>{                                       //A
     }                                      
 });
 
-// app.listen(port, () => {
-   //  redisClient.connect();
-   // console.log("listening")
-// });
-
-
-https.createServer(
-    {key: fs.readFileSync('/etc/letsencrypt/live/for17015@alisonforsberg.cit270.com/privkey.pem'),
-    cert: fs.readFileSync('/etc/letsencrypt/live/for17015@alisonforsberg.cit270.com/cert.pem'),
-    ca:fs.readFileSync('/etc/letsencrypt/live/for17015@alisonforsberg.cit270.com/fullchain.pem')
-},
-app
-).listen(port, ()=>{
+ app.listen(port, () => {
     redisClient.connect();
-    console.log('Listening on port: '+port);
-})
+    console.log("listening")
+ });
+
+
+//https.createServer(
+//    {key: fs.readFileSync('/etc/letsencrypt/live/for17015@alisonforsberg.cit270.com/privkey.pem'),
+ //   cert: fs.readFileSync('/etc/letsencrypt/live/for17015@alisonforsberg.cit270.com/cert.pem'),
+//    ca:fs.readFileSync('/etc/letsencrypt/live/for17015@alisonforsberg.cit270.com/fullchain.pem')
+//},
+//app
+//).listen(port, ()=>{
+//   redisClient.connect();
+//  console.log('Listening on port: '+port);
+//})
+// commented out on 3/27 to work on running without cert on our laptops
