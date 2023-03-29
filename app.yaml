@@ -46,3 +46,44 @@ spec:
 #   - port: 443
 #     targetPort: 443
 #commented out 3/27 to get rid of loadbalancer
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: stedi-alisonforsberg-nodeport
+spec:
+  selector:
+    app: cit270alisonservice
+  type: NodePort
+  ports:
+    - port: 80
+      targetPort: 3000
+---
+apiVersion: networking.gke.io/v1
+kind: ManagedCertificate
+metadata:
+  name: stedi-alisonforsberg-certificate
+spec:
+  domains:
+    - alisonforsberg.cit270.com
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: stedi-alisonforsberg-ingress
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: cit270alison
+    networking.gke.io/managed-certificates: stedi-alisonforsberg-certificate
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: stedi-alisonforsberg-nodeport
+            port:
+              number: 80
