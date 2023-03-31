@@ -70,7 +70,7 @@ app.post('/login', async(req, res) =>{                                       //A
 
  app.listen(port, () => {
     redisClient.connect();
-    console.log("listening");
+    console.log("listening on port " + port);
  });
 
 
