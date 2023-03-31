@@ -2,7 +2,7 @@ const express = require("express");
 
 const app = express();
 
-const port = 443;
+const port = 3000;
 
 const bodyParser = require('body-parser');
 
@@ -70,7 +70,7 @@ app.post('/login', async(req, res) =>{                                       //A
 
  app.listen(port, () => {
     redisClient.connect();
-    console.log("listening")
+    console.log("listening");
  });
 
 

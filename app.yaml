@@ -64,7 +64,7 @@ spec:
 apiVersion: networking.gke.io/v1
 kind: ManagedCertificate
 metadata:
-  name: stedi-alisonforsberg-certificate
+  name: stedi-alisonforsberg-certificate2
 spec:
   domains:
     - alisonforsberg.cit270.com
@@ -75,7 +75,7 @@ metadata:
   name: stedi-alisonforsberg-ingress
   annotations:
     kubernetes.io/ingress.global-static-ip-name: cit270alison
-    networking.gke.io/managed-certificates: stedi-alisonforsberg-certificate
+    networking.gke.io/managed-certificates: stedi-alisonforsberg-certificate2
 spec:
   rules:
   - http:
